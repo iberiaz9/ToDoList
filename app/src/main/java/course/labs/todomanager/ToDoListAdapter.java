@@ -1,5 +1,6 @@
 package course.labs.todomanager;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -144,13 +145,23 @@ public class ToDoListAdapter extends BaseAdapter {
                         else
                             toDoItem.setStatus(ToDoItem.Status.NOTDONE);
 
-                        ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
-                                toDoItem.mDate.before(new Date()));
+                        try {
+                            ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
+                                    toDoItem.mDate.before(ToDoItem.FORMAT2.parse((new Date()).toString())));
+                        }
+                        catch (ParseException e) {
+                            ovdView.setChecked(true);
+                        }
                     }
 				});
 
-        ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
-                toDoItem.mDate.before(new Date()));
+        try {
+			ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
+                toDoItem.mDate.before(ToDoItem.FORMAT2.parse((new Date()).toString())));
+		}
+		catch (ParseException e) {
+			ovdView.setChecked(true);
+		}
 
 		// TODO - Display Priority in a TextView
         final TextView priority = (TextView)toDoItemView.findViewById(R.id.priorityView);
