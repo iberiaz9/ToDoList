@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Iberia\Documents\GitHub\ToDoList\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6dfa9494383ff242af9ba9243396cf3d6abc8516">
+        <dex dex="C:\Users\Iberia\Documents\GitHub\ToDoList\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f1de1c307f755063c8d6666972d76126aaaef273\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Iberia\Documents\GitHub\ToDoList\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b43e05951a9d5910c1b832de0e6b860304bed13a">
+        <dex dex="C:\Users\Iberia\Documents\GitHub\ToDoList\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_25cf0563c4b022e68c97ec5405c0a3cc02284e37\classes.dex" />
+    </item>
+
+</items>
