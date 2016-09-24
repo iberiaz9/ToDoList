@@ -137,21 +137,19 @@ public class ToDoListAdapter extends BaseAdapter {
 
         statusView.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 					@Override
-					public void onCheckedChanged(CompoundButton buttonView,
-							boolean isChecked) {
-						Log.i(TAG,"Entered onCheckedChanged()");
-                        if(isChecked)
-                            toDoItem.setStatus(ToDoItem.Status.DONE);
-                        else
-                            toDoItem.setStatus(ToDoItem.Status.NOTDONE);
-
-                        try {
-                            ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
-                                    toDoItem.mDate.before(ToDoItem.FORMAT.parse(ToDoItem.FORMAT.format(new Date()))));
-                        }
-                        catch (ParseException e) {
-                            ovdView.setChecked(true);
-                        }
+					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if(isChecked) {
+							toDoItem.setStatus(ToDoItem.Status.DONE);
+							ovdView.setChecked(false);
+						} else {
+							toDoItem.setStatus(ToDoItem.Status.NOTDONE);
+							try {
+								if (toDoItem.mDate.before(ToDoItem.FORMAT.parse(ToDoItem.FORMAT.format(new Date()))))
+									ovdView.setChecked(true);
+							} catch (ParseException e) {
+                                Log.i(TAG,"ParseException in onCheckedChanged()");
+							}
+						}
                     }
 				});
 
