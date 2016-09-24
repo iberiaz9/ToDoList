@@ -77,7 +77,7 @@ public class AddToDoActivity extends Activity {
         mDate = null;
         if (intent.getStringExtra(ToDoItem.DATE) != null) {
             try {
-                mDate = ToDoItem.FORMAT2.parse(intent.getStringExtra(ToDoItem.DATE));
+                mDate = ToDoItem.FORMAT.parse(intent.getStringExtra(ToDoItem.DATE));
             } catch (ParseException e) {
                 mDate = new Date();
             }

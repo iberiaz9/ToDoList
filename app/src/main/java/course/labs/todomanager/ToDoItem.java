@@ -27,8 +27,6 @@ public class ToDoItem {
 
 	public final static SimpleDateFormat FORMAT = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss", Locale.US);
-	public final static SimpleDateFormat FORMAT2 = new SimpleDateFormat(
-			"EEE MMM dd HH:mm:ss Z yyyy", Locale.US);
 
 	private String mTitle = new String();
 	private Priority mPriority = Priority.LOW;
@@ -106,7 +104,7 @@ public class ToDoItem {
 		intent.putExtra(ToDoItem.TITLE, mTitle);
 		intent.putExtra(ToDoItem.PRIORITY, mPriority.toString());
 		intent.putExtra(ToDoItem.STATUS, mStatus.toString());
-		intent.putExtra(ToDoItem.DATE, mDate.toString());
+		intent.putExtra(ToDoItem.DATE, FORMAT.format(mDate));
 	}
 
 	public String toString() {

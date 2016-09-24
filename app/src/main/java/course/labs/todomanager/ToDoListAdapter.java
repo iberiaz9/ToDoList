@@ -147,7 +147,7 @@ public class ToDoListAdapter extends BaseAdapter {
 
                         try {
                             ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
-                                    toDoItem.mDate.before(ToDoItem.FORMAT2.parse((new Date()).toString())));
+                                    toDoItem.mDate.before(ToDoItem.FORMAT.parse(ToDoItem.FORMAT.format(new Date()))));
                         }
                         catch (ParseException e) {
                             ovdView.setChecked(true);
@@ -157,7 +157,7 @@ public class ToDoListAdapter extends BaseAdapter {
 
         try {
 			ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
-                toDoItem.mDate.before(ToDoItem.FORMAT2.parse((new Date()).toString())));
+                toDoItem.mDate.before(ToDoItem.FORMAT.parse(ToDoItem.FORMAT.format(new Date()))));
 		}
 		catch (ParseException e) {
 			ovdView.setChecked(true);
