@@ -36,10 +36,10 @@ public class ToDoItem {
 	Date mDate;
 
 	ToDoItem(String title, Priority priority, Status status, Date date) {
-		this.mTitle = title;
-		this.mPriority = priority;
-		this.mStatus = status;
-		this.mDate = date;
+		mTitle = title;
+		mPriority = priority;
+		mStatus = status;
+		mDate = date;
 	}
 
 	// Create a new ToDoItem from data packaged in an Intent
