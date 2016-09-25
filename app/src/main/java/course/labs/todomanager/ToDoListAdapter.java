@@ -143,23 +143,13 @@ public class ToDoListAdapter extends BaseAdapter {
 							ovdView.setChecked(false);
 						} else {
 							toDoItem.setStatus(ToDoItem.Status.NOTDONE);
-							try {
-								if (toDoItem.mDate.before(ToDoItem.FORMAT.parse(ToDoItem.FORMAT.format(new Date()))))
+							if (toDoItem.mDate.before(new Date()))
 									ovdView.setChecked(true);
-							} catch (ParseException e) {
-                                Log.i(TAG,"ParseException in onCheckedChanged()");
-							}
 						}
                     }
 				});
 
-        try {
-			ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE &&
-                toDoItem.mDate.before(ToDoItem.FORMAT.parse(ToDoItem.FORMAT.format(new Date()))));
-		}
-		catch (ParseException e) {
-			ovdView.setChecked(true);
-		}
+		ovdView.setChecked(toDoItem.getStatus() == ToDoItem.Status.NOTDONE && toDoItem.mDate.before(new Date()));
 
 		// TODO - Display Priority in a TextView
         final TextView priority = (TextView)toDoItemView.findViewById(R.id.priorityView);
